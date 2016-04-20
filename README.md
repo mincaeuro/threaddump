@@ -16,7 +16,7 @@ paste code:
 #!/bin/bash
 Servername=$(hostname);
 ##identify proc. pid
-PID=`ps axf | grep 'tomcat/standard/conf/logging.properties' | grep -v grep | awk '{print $1}'`
+PID=`ps axf | grep 'tomcat' | grep -v grep | awk '{print $1}'`
 TMPFILE=~/jstack_$PID_$(date +%d%m%Y_%H_%M)_$Servername.out
 
 clear
