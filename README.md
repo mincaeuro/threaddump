@@ -6,13 +6,11 @@ crontab -e
 0 11,13,16 * * 1-5  ~/threaddump.sh >> ~/jstack.log 2>&1
 
 ```
-crate script file and make it executable:
+crate script file:
 ```
 vim threaddump.sh
 ```
-```
-chmod +x threaddump.sh
-```
+
 paste code:
 ```
 #!/bin/bash
@@ -52,4 +50,8 @@ else
 	echo "No, Not yet!!!"
 
 fi
+```
+and make it executable:
+```
+chmod +x threaddump.sh
 ```
