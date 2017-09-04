@@ -18,7 +18,7 @@ paste code:
 Servername=$(hostname);
 testtime=$(date +%d%m%Y_%H_%M)
 PID=`ps axf | grep 'tomcat/standard/conf/logging.properties' | grep -v grep | awk '{print $1}'`
-TMPFILE=/home/arsystem/jstack_$PID_$(date +%d%m%Y_%H_%M)_$Servername.out
+TMPFILE=/home/user/jstack_$PID_$(date +%d%m%Y_%H_%M)_$Servername.out
 
 clear
 for i in 1 2 3 4 5 6
@@ -36,7 +36,7 @@ result=$(less $TMPFILE | grep "java.lang.Thread.State: BLOCKED")
 countresult=$(less $TMPFILE | grep -c "java.lang.Thread.State: BLOCKED")
 echo "Nr of Results:"
 echo $countresult
-echo $result >> /home/arsystem/result_file_$PID_$testtime_$Servername.txt;
+echo $result >> /home/user/result_file_$PID_$testtime_$Servername.txt;
 
 echo "zipping.."
 gzip $TMPFILE
